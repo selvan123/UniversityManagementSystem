@@ -16,7 +16,7 @@ BEGIN
     INSERT [dbo].[Admin] ([Id], [JoiningDate]) VALUES (N'222-2222-2', N'2016-11-06')
 END  
 
-UPDATE   [dbo].[Faculty] set [Department] = "CS"
+UPDATE   [dbo].[Faculty] set [Department] = 'CS'
     
 IF (NOT EXISTS(SELECT * FROM [dbo].[Faculty]))  
 BEGIN
