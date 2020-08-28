@@ -51,15 +51,16 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       az group create --name rgwebapp --location westus
+
+      az sql server create --name UMSDBserver --resource-group rgwebapp --admin-user "umsuser" --admin-password "Pass1@23"
+
+      az sql db create --resource-group rgwebapp --server UMSDBserver  --name UMSdb --service-objective S3 --collation SQL_Latin1_General_CP1_CI_AS
       
       az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
       az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
   
-      az sql server create –name UMSDBserver –resource-group rgwebapp –admin-user "umsuser" –admin-password "Pass1@23"
-
-      az sql db create –resource-group rgwebapp –server UMSDBserver  –name UMSdb –service-objective S3 –collation SQL_Latin1_General_CP1_CI_AS
-    
+      
 - task: DownloadBuildArtifacts@0
   inputs:
       buildType: 'current'
