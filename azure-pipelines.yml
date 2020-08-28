@@ -69,3 +69,16 @@ steps:
     appType: 'webApp'
     WebAppName: 'selvanapp123'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'Azure'
+    AuthenticationType: 'server'
+    ServerName: 'selvandb'
+    DatabaseName: 'selvan'
+    SqlUsername: 'selvan'
+    SqlPassword: 'Pass1@34'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Publish'
+    DacpacFile: 'D:\a\1\s\UMSDB\bin\Output\UMS.dacpac'
+    IpDetectionMethod: 'AutoDetect'
