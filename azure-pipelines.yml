@@ -71,7 +71,7 @@ steps:
       downloadType: 'single'
       artifactName: 'drop'
       downloadPath: '$(System.DefaultWorkingDirectory)'
-  enabled: false
+  
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -79,7 +79,7 @@ steps:
     appType: 'webApp'
     WebAppName: 'selvanapp123'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-  enabled: false
+  
 - task: SqlAzureDacpacDeployment@1
   inputs:
     azureSubscription: 'Azure'
