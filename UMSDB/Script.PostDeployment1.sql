@@ -16,6 +16,10 @@ BEGIN
     INSERT [dbo].[Admin] ([Id], [JoiningDate]) VALUES (N'222-2222-2', N'2016-11-06')
 END  
 
+INSERT [dbo].[Faculty] ([Id], [JoiningDate], [Department], [Position], [School], [College], [Undergraduate], [Postgraduate], [PHD], [SchoolPassingYear], [CollegePassingYear], [UndergraduatePassingYear], [PostgraduatePassingYear], [PHDPassingYear]) VALUES (N'1113-111-1', N'2014-08-05', N'CSE', N'Senior Lecturer', N'
+    Raj Govt. Laboratory High School', N'
+    New Govt. Degree College.', N'AIUB', N'AIUB', N'', N'2001', N'2003', N'2007', N'2009', N'')
+    
 IF (NOT EXISTS(SELECT * FROM [dbo].[Faculty]))  
 BEGIN
     INSERT [dbo].[Faculty] ([Id], [JoiningDate], [Department], [Position], [School], [College], [Undergraduate], [Postgraduate], [PHD], [SchoolPassingYear], [CollegePassingYear], [UndergraduatePassingYear], [PostgraduatePassingYear], [PHDPassingYear]) VALUES (N'1111-111-1', N'2014-08-05', N'CSE', N'Senior Lecturer', N'
