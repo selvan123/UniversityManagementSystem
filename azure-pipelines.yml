@@ -28,7 +28,22 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: PublishBuildArtifacts@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+    FileCopyOptions: 
+    
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Azure'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az group create --name rgwebapp --location westus
+      
+      az appservice plan create --name myappPlan --sku F1
+      
+      az webapp create --name selvanapp123 --plan myPlan --runtime  "aspnet|v4.7"
