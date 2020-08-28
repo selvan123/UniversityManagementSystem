@@ -52,9 +52,9 @@ steps:
     inlineScript: |
       az group create --name rgwebapp --location westus
 
-      az sql server create --name UMSDBserver123 --resource-group rgwebapp --admin-user "umsuser" --admin-password "Pass1@23"
+      az sql server create --name umsdbserver123 --resource-group rgwebapp --admin-user "umsuser" --admin-password "Pass1@23"
 
-      az sql db create --resource-group rgwebapp --server UMSDBserver123  --name UMSdb --service-objective S3 --collation SQL_Latin1_General_CP1_CI_AS
+      az sql db create --resource-group rgwebapp --server umsdbserver123  --name umsdb --service-objective S3 --collation SQL_Latin1_General_CP1_CI_AS
       
       az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
@@ -79,11 +79,11 @@ steps:
   inputs:
     azureSubscription: 'Azure'
     AuthenticationType: 'server'
-    ServerName: 'UMSDBserver123.database.windows.net'
-    DatabaseName: 'UMSdb'
+    ServerName: 'umsdbserver123.database.windows.net'
+    DatabaseName: 'umsdb'
     SqlUsername: 'umsuser'
     SqlPassword: 'Pass1@34'
     deployType: 'DacpacTask'
     DeploymentAction: 'Publish'
-    DacpacFile: 'D:\a\1\s\UMSDB\bin\Output\UMS.dacpac'
+    DacpacFile: 'D:\a\1\s\umsdb\bin\Output\UMS.dacpac'
     IpDetectionMethod: 'AutoDetect'
