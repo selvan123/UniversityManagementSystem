@@ -55,7 +55,8 @@ steps:
       az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
       az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
-
+  enabled: false
+    
 - task: DownloadBuildArtifacts@0
   inputs:
       buildType: 'current'
@@ -69,12 +70,12 @@ steps:
     appType: 'webApp'
     WebAppName: 'selvanapp123'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-
+  enabled: false
 - task: SqlAzureDacpacDeployment@1
   inputs:
     azureSubscription: 'Azure'
     AuthenticationType: 'server'
-    ServerName: 'selvandb'
+    ServerName: 'selvandb.database.windows.net'
     DatabaseName: 'selvan'
     SqlUsername: 'selvan'
     SqlPassword: 'Pass1@34'
