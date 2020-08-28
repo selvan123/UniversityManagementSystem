@@ -47,3 +47,11 @@ steps:
       az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
       az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure'
+    appType: 'webApp'
+    WebAppName: 'selvanapp123'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
