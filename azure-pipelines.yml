@@ -77,7 +77,7 @@ steps:
     AuthenticationType: 'server'
     ServerName: 'selvandb.database.windows.net'
     DatabaseName: 'selvan'
-    SqlUsername: 'selvan'
+    SqlUsername: 'selvandb'
     SqlPassword: 'Pass1@34'
     deployType: 'DacpacTask'
     DeploymentAction: 'Publish'
