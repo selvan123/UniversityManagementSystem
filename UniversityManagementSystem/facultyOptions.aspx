@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <title>Faculty Home | Auspicious International University-Bangladesh</title>
+   <title>Faculty Home | ABC International University-INDIA</title>
    <style type="text/css">
 	body	
 	{
@@ -96,7 +96,7 @@
     <form id="form1" runat="server">
     
         <div class="name_area">
-            <center><h1>AUSPICIOUS INTERNATIONAL UNIVERSITY - BANGLADESH</h1>
+            <center><h1>ABC INTERNATIONAL UNIVERSITY - INDIA</h1>
             <p>WHERE EXTREME CHILLERS ARE CREATED :P</p></center>
         </div>
         <div class="form_area">
@@ -118,7 +118,7 @@
                 theYear = theYear + 1900
             document.write(theYear)
         </script>
-        Team Auspicious <br />All Rights Reserved (v1.0)
+        Team ABC <br />All Rights Reserved (v1.0)
 	 </div>
 
         <div class="details_area1">

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Admission | Auspicious International University-Bangladesh</title>
+    <title>Admission | ABC International University-INDIA</title>
    <style type="text/css">
 	body	
 	{
@@ -84,7 +84,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="name_area">
-            <center><h1>AUSPICIOUS INTERNATIONAL UNIVERSITY - BANGLADESH</h1>
+            <center><h1>ABC INTERNATIONAL UNIVERSITY - INDIA</h1>
             <p>WHERE EXTREME CHILLERS ARE CREATED :P</p></center>
         </div>
         <div class="form_area">
@@ -128,7 +128,8 @@
 	                    <li>Minimum <strong>GPA 2.5</strong> (in both O and A Levels separately) with no grade lower than &lsquo;D&rsquo; among best <strong>5 subjects</strong> in O&#39; level and best <strong>2 subjects</strong> in A&#39; level<strong>. Math</strong> must be included at <strong>A&#39; level.</strong> (Scale: A=5, B=4, C=3, D=2 &amp; E=1)</li>
 	                    <li>High School Diploma/International Baccalaureate with minimum grade B in Math<strong>.</strong></li>
 	                    <li>GED result will not be accepted<strong>.</strong></li>
-                        </ol>               
+                        </ol>
+               
                     <p><strong>&nbsp Required Documents for Form Submission:</strong></p>
                     <ol>
 	                <li>Attested Photocopy of all <strong>Board</strong> <strong>Mark Sheets</strong> and <strong>Testimonials / Certificates</strong>.</li>
@@ -141,7 +142,8 @@
                    </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-        </div>
+        </div>
+
      <div class="copyright">
 		&copy; 2016-
         <script type="text/javascript">
@@ -151,7 +153,7 @@
                 theYear = theYear + 1900
             document.write(theYear)
         </script>
-        Team Auspicious <br />All Rights Reserved (v1.0)
+        Team ABC <br />All Rights Reserved (v1.0)
 	 </div>
     </form>
 </body>

@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Admin] (Table)
+       [dbo].[Faculty] (Table)
+       [dbo].[Information] (Table)
+       [dbo].[Schedule] (Table)
+       [dbo].[Student] (Table)
+       [dbo].[Users] (Table)
+
+** Supporting actions

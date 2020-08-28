@@ -1,0 +1,5 @@
+d:\UMSDB\Database1\bin\Debug\UMS.dacpac
+d:\UMSDB\Database1\bin\Debug\Database1.dll
+d:\UMSDB\Database1\bin\Debug\Database1.pdb
+d:\UMSDB\Database1\obj\Debug\Database1.dll
+d:\UMSDB\Database1\obj\Debug\Database1.pdb
