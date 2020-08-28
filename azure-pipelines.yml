@@ -48,6 +48,12 @@ steps:
       
       az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
 
+- task: DownloadBuildArtifacts@0
+  inputs:
+      buildType: 'current'
+      downloadType: 'single'
+      artifactName: 'drop'
+      downloadPath: '$(System.DefaultWorkingDirectory)'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
