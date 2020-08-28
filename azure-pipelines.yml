@@ -44,6 +44,6 @@ steps:
     inlineScript: |
       az group create --name rgwebapp --location westus
       
-      az appservice plan create --name myappPlan --sku F1
+      az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
-      az webapp create --name selvanapp123 --plan myPlan --runtime  "aspnet|v4.7"
+      az webapp create --resource-group rgwebapp --name selvanapp123 --plan myPlan --runtime  "aspnet|v4.7" 
