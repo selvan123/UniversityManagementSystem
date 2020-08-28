@@ -27,7 +27,7 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-  enabled: false
+
 
 - task: VSBuild@1
   inputs:
@@ -45,16 +45,6 @@ steps:
     FileCopyOptions: 
     
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Azure'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      
-      az sql server firewall-rule create -g rgwebapp -s umsdbserver123 -n myrule --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
-  enabled: false
-
 
 - task: AzureCLI@2
   inputs:
@@ -62,18 +52,18 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az group create --name rgwebapp --location westus
+      az group create --name rgwebapp1 --location westus
 
-      az sql server create --name umsdbserver123 --resource-group rgwebapp --admin-user "umsuser" --admin-password "Pass1@23"
+      az sql server create --name umsdbserver1234 --resource-group rgwebapp1 --admin-user "umsuser" --admin-password "Pass1@34"
 
-      az sql db create --resource-group rgwebapp --server umsdbserver123  --name umsdb --service-objective S3 --collation SQL_Latin1_General_CP1_CI_AS
+      az sql db create --resource-group rgwebapp1 --server umsdbserver1234  --name umsdb --service-objective S3 --collation SQL_Latin1_General_CP1_CI_AS
       
-      az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
+      az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp1
       
-      az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
+      az webapp create --resource-group rgwebapp1 --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
       
-      az sql server firewall-rule create -g mygroup -s umsdbserver123 -n myrule --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
-  enabled: false
+      az sql server firewall-rule create -g mygroup -s umsdbserver1234 -n myrule --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+ 
       
 - task: DownloadBuildArtifacts@0
   inputs:
@@ -94,10 +84,10 @@ steps:
   inputs:
     azureSubscription: 'Azure'
     AuthenticationType: 'server'
-    ServerName: 'umsdbserver123.database.windows.net'
+    ServerName: 'umsdbserver1234.database.windows.net'
     DatabaseName: 'umsdb'
     SqlUsername: 'umsuser'
-    SqlPassword: 'Pass1@23'
+    SqlPassword: 'Pass1@34'
     deployType: 'DacpacTask'
     DeploymentAction: 'Publish'
     DacpacFile: 'D:\a\1\s\umsdb\bin\Output\UMS.dacpac'
