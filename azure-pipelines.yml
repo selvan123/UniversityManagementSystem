@@ -46,4 +46,4 @@ steps:
       
       az appservice plan create --name myappPlan --sku F1 --resource-group rgwebapp
       
-      az webapp create --resource-group rgwebapp --name selvanapp123 --plan myPlan --runtime  "aspnet|v4.7" 
+      az webapp create --resource-group rgwebapp --name selvanapp123 --plan myappPlan --runtime  "aspnet|v4.7" 
